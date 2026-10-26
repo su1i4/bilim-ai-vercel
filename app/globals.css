@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-brand-50: #f0f1ff;
+  --color-brand-100: #e3e5ff;
+  --color-brand-200: #c9ccff;
+  --color-brand-300: #a5a9ff;
+  --color-brand-400: #8086fb;
+  --color-brand-500: #6366f1;
+  --color-brand-600: #4f4ce6;
+  --color-brand-700: #4239c9;
+  --color-lime: #c6f35e;
+  --color-lime-soft: #f0fcd2;
+  --color-ink: #15151c;
+  --color-page: #f5f6fa;
+}
+
+html,
+body {
+  background: var(--color-page);
+  color: var(--color-ink);
+}
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-glow {
+  background: linear-gradient(180deg, #f8f8ff 0%, #f0f1ff 35%, #c9ccff 72%, #8086fb 100%);
+}
+.text-gradient {
+  background: linear-gradient(90deg, #6467f2, #9da2ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stripes-brand {
+  background: repeating-linear-gradient(90deg, #a78bfa 0 3px, #ede9fe 3px 6px);
+}
+.stripes-lime {
+  background: repeating-linear-gradient(90deg, #a3e635 0 3px, #ecfccb 3px 6px);
+}
+
+.typing span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: #8086fb;
+  animation: blink 1.2s infinite;
+}
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-2px); }
+}
+
+.fade-in { animation: fadeIn 0.35s ease-out both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
